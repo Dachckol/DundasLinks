@@ -1,0 +1,101 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="Description" content="Young Enterprise company selling handcrafted, high quality cufflinks."/>
+        <link rel="stylesheet" href="/static/css/foundation.min.css" />
+        <link rel="stylesheet" href="/static/css/normalize.css"/>
+        <link rel="stylesheet" href="/static/css/app.css"/>
+        <script src="/static/js/vendor/modernizr.js"></script>
+        <script src="/static/js/vendor/jquery.js"></script>
+        {% block title %}
+        {% endblock %}
+    </head>
+    <body>
+            <div data-alert class="alert-box alert" id="JavaScriptAlert">
+                It appears that you don't have JavaScript enabled. Please <a target="_blank" href="http://www.enable-javascript.com/">enable JavaScript</a> or some parts of this site will not function correctly.
+            </div>
+           {%if messages%}
+                {% for message in messages%}
+                    <div data-alert class="alert-box {% if message.tags == 'success'%}success{%elif message.tags == 'error'%}alert{%endif%} centerIt">
+                        {{message}}
+                    </div>
+                {%endfor%}
+            {%endif%}
+            <script>
+                $(document).ready(function () {
+                    $("#JavaScriptAlert").hide();
+                });
+            </script>
+            <nav>
+                <ul class="orbit" data-orbit>
+                    <li><img src="/static/img/shotgun.JPG">
+                        <div class="orbit-caption centerIt">
+                        <b>Shotgun Shells</b>
+                        </div>
+                    </li>
+                    <li><img src="/static/img/flowers.JPG">
+                        <div class="orbit-caption centerIt">
+                        <b>Antique Coin (Flowers)</b>
+                        </div>
+                    </li>
+                    <li><img src="/static/img/gate.JPG">
+                        <div class="orbit-caption centerIt">
+                        <b>Antique Coin (Gate)</b>
+                        </div>
+                    </li>
+                </ul>
+                <div class="row bar centerIt">
+                    <div class="small-12 medium-3 columns">
+                        <h3 class="title">Dundas Links</h3>
+                    </div>
+                    <div class="small-12 medium-9 columns">
+                        <div class="Nav right">
+                            <a class="small button" id="homeNav" href="/">Home</a>
+                            <a class="small button" id="aboutNav" href="/about">About Us</a>
+                            <a class="small button" id="productsNav" href="/products/">Products</a>
+                            <a class="small button" id="newsNav" href="/news/">News</a>
+                            <a class="small button" id="contactNav" href="/contact/">Contact</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            {% block content %}
+            {% endblock %}
+            <footer class="row backText">
+                <div class="small-12 medium-6 columns">
+                    <p>You can get in touch using the <a href="/contact/">contact form</a>. Alternatively, you can also contact us directly through <a href="https://www.facebook.com/dundaslinks">Facebook</a>, <a href="https://twitter.com/dundaslinks">Twitter</a> or by emailing <a href="mailto:dundaslinks@gmail.com">dundaslinks@gmail.com</a>.</p>
+                </div>
+                <div class="small-12 medium-6 columns">
+                    <p>This site does not use cookies and follows the 2003 data protection act. We will not share our data with any outsite sources. However services linked to and used by this website follow their own privacy policies. If you have any questions or concerns, please <a href="/contact/">contact us</a>.</p>
+                </div>
+                <div class="small-12 centerIt">
+                    <p>Website created and designed by <a href="http://www.dackowebdesign.co.uk" target="_blank">Michal Dacko</a>.</p>
+                </div>
+            </footer>
+        </article>
+        <script src="/static/js/navLoader.js"></script>
+        <script src="/static/js/detailLoader.js"></script>
+        <script src="/static/js/foundation/foundation.js"></script>
+        <script src="/static/js/foundation/foundation.orbit.js"></script>
+        {% block after %}
+        {% endblock %}
+        <script>
+            $(document).foundation();
+            $(document).foundation({
+                orbit:{
+                    animation: "slide",
+                    time_speed: 3000,
+                    pause_on_hover: true,
+                    resume_on_mouseout: true,
+                    next_on_click: true,
+                }
+            });
+        </script>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5582ea4f13e6b512" async="async"></script>
+
+    </body>
+</html>

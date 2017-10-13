@@ -1,0 +1,90 @@
+body{
+    background: url(/static/img/background.png)
+}
+
+nav img{
+}
+nav .bar{
+    padding-top: 10px;
+    margin-bottom: 25px;
+}
+nav .title{
+    color: #333;
+}
+
+.alert-box{
+    margin: 0px !important;
+}
+
+.backText{
+    margin-top: 100px;
+}
+.backText div p{
+    font-size: 10pt !important;
+}
+
+.button.small{
+    background: none;
+    color: #0087C1;
+    font-weight: bold;
+    transition-duration: 0.5s;
+    transition-property: color, border, border-radius;
+}
+.button.small:hover{
+    color: #666;
+}
+.button.small.active{
+    border: solid 2px #0087C1;
+    border-radius: 10px;
+    color: #666;
+}
+.button.small:active{
+    color: white;
+}
+
+.button.Twitter{
+    color:white !important;
+    background: #41abe1 !important;
+    border: 1px #41abe1 solid;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px; 
+}
+.button.Facebook{
+    color:white !important;
+    background: #4b67a1 !important;
+    border: 1px #4b67a1 solid;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px; 
+}
+.button.Twitter:hover, .button.Twitter:active{
+    background: none !important;
+    color: black !important;
+}
+.button.Facebook:hover, .button.Facebook:active{
+    background: none !important;
+    color: black !important;
+}
+
+.centerIt{
+    text-align: center;
+}
+
+.orbit-next span{
+    border-color:transparent transparent transparent #666 !important;
+}
+.orbit-prev span{
+    border-color:transparent #666 transparent transparent !important;
+}
+.orbit-slide-number{
+    color: #666 !important;
+}
+.orbit-progress{
+    background-color: #666 !important;
+}
+.orbit-timer span{
+    border-color: transparent transparent transparent #666 !important;
+}
+
+h1,h2,h3,h4,h5,h6{
+    color: #666;
+}

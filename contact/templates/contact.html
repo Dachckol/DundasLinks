@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}
+        <title>Contact | Dundas Links</title>
+{% endblock %}
+
+{% block content %}
+        <div id="pageID" data-page='contact'></div>
+        <div class="row">
+            <div class="small-12 medium-8 columns">
+            	<form action="" method="post">
+            		{% csrf_token %}
+					<div class="name">
+                        <label {% if form.name.errors %} class="error" {% endif %}>Name <small>required</small>
+                            {{form.name}}
+                        </label>
+                        {% if form.name.errors %} 
+                        	<small class="error">{{form.name.errors.as_text}}</small>
+                        {% endif %}
+                    </div>
+                    <br/>
+					<div class="email">
+                        <label {% if form.email.errors %} class="error" {% endif %}>Email <small>required</small>
+                            {{form.email}}
+                        </label>
+                        {% if form.email.errors %} 
+                        	<small class="error">{{form.email.errors.as_text}}</small>
+                        {% endif %}
+                    </div>
+                    <br/>
+					<div class="contentType">
+                        <label {% if form.contentType.errors %} class="error" {% endif %}>Contact Type<small> Required</small>
+                            {{form.contentType}}
+                        </label>
+                        {% if form.contentType.errors %} 
+                        	<small class="error">{{form.contentType.errors.as_text}}</small>
+                        {% endif %}
+                    </div>
+                    <br/>
+					<div class="content">
+                        <label {% if form.content.errors %} class="error" {% endif %}>Details <small>required</small>
+                            {{form.content}}
+                        </label>
+                        {% if form.content.errors %} 
+                        	<small class="error">{{form.content.errors.as_text}}</small>
+                        {% endif %}
+                    </div>
+                  <button style="margin-top:10px;" type="submit" class="medium button left round">Submit</button>
+            	</form>
+            </div>
+	    <div class="small-12 medium-4 columns">
+		<h3>Dont like the form?</h3>
+		<p>If you do not like the form, or for some reason it does not work, there are other ways of contacting us...</p>
+		<ul>
+			<li>Email: <a href="mailto:dundaslinks@gmail.com">dundaslinks@gmail.com</a></li>
+			<li>Twitter: <a target="_blank" href="https://twitter.com/dundaslinks">@dundaslinks</a></li>
+            <li>Facebook: <a target="_blank" href="https://www.facebook.com/dundaslinks">dundaslinks</a></li>
+		</ul>
+	    </div>
+        </div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{%load humanize%}
+
+{% block title %}
+        <title>Home | Dundas Links</title>
+{% endblock %}
+
+{% block content %}
+        <div id="pageID" data-page='home'></div>
+        <div class="row">
+            <div class="medium-7 small-12 columns">
+                <h5>Welcome to our page!</h5><p>
+Dundas Links is a small company dedicated to providing high quality, handcrafted cuff links. We make our cufflinks using recycled materials sourced from local antique shops and shooting societies.</p><p> This is our website where you can not only see the who, what and why of our company, but also get in touch with us or purchase some of our goods yourself.</p>
+                <a class="button small radius" href="/about/">About Us</a>
+            </div>
+            <div class="medium-5 small-12 columns">
+                <h5>Recent News</h5>
+                {% for e in entries %}
+                <div class="row">
+                    <div class="small-7 columns">
+                        <a href="/news/#{{e.id}}">{{e.title}}</a><br/>
+                    </div>
+                    <div class="small-5 columns">
+                        <small>{{e.pub_date|naturaltime}}</small>
+                    </div>
+                </div>
+                {% endfor%}
+            </div>
+        </div>
+{% endblock %}
